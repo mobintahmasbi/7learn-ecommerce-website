@@ -8,6 +8,8 @@ export default interface ProductModel extends Document{
     sales_price: number;
     tumbnail: String;
     gallery: [String];
+    prodct_category: String;
+    attributes: [Object];
     created_At: Date;
     updated_At: Date;
     status: ProductStatus
