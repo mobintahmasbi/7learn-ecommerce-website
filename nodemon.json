@@ -1,5 +1,6 @@
 {
     "watch":[
+        "infrustructural",
         "src"
     ],
     "ext":"ts",
