@@ -7,6 +7,7 @@ export default interface IOrder extends Document{
     coupon: object;
     final_price: number;
     status: number;
+    order_lines: [object];
     created_at: Date;
     updated_at: Date;
 }
