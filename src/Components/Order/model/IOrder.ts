@@ -10,4 +10,5 @@ export default interface IOrder extends Document{
     order_lines: [object];
     created_at: Date;
     updated_at: Date;
+    
 }
