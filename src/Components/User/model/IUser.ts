@@ -8,6 +8,7 @@ interface IUser extends Document {
     phone: string;
     total_order: number;
     wallet: number;
+    address: [object]
     created_At: Date;
     
 }
