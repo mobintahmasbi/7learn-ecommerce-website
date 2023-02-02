@@ -6,13 +6,13 @@ export default interface IBasket{
 
     remove(product: IProduct): void;
 
-    items(): IProduct[];
+    items(): Promise<IProduct[]>;
 
-    count(): number;
+    count(): Promise<number>;
 
-    has(product: IProduct): boolean;
+    has(product: IProduct): Promise<boolean>;
 
     clear(): void;
 
-    total(): number;
+    total(): Promise<number>;
 }

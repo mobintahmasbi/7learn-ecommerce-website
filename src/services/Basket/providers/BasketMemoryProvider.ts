@@ -15,27 +15,27 @@ export default class BasketMemoryProvider implements IBasket{
         this.BasketItems.splice(this.BasketItems.indexOf(product), 1);
     
     }
-    public items(): IProduct[] {
+    public items(): Promise<IProduct[]> {
 
-        return this.BasketItems;
-
-    }
-    public count(): number {
-
-        return this.BasketItems.length;
+        return Promise.resolve(this.BasketItems);
 
     }
-    public has(product: IProduct): boolean {
-        return this.BasketItems.includes(product);
+    public count(): Promise<number> {
+
+        return Promise.resolve(this.BasketItems.length);
+
+    }
+    public has(product: IProduct): Promise<boolean> {
+        return Promise.resolve(this.BasketItems.includes(product));
     }
     clear(): void {
         this.BasketItems = [];
     }
-    total(): number {
-
-        return this.BasketItems.reduce((total, product: IProduct) => {
+    total(): Promise<number> {
+        const price = this.BasketItems.reduce((total, product: IProduct) => {
             return total + product.price;
         }, 0)
+        return Promise.resolve(price)
         
     }
     
