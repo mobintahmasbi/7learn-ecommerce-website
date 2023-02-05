@@ -1,13 +1,14 @@
 import IBasket from "../contract/IBasket";
 import IProduct from 'src/Components/Products/model/IProduct';
 import { client } from "infrustructural/connection/redis";
+import IBasketConfigurable from "../contract/IBasketConfigurable";
 
-export default class BaketRedisProvider implements IBasket{
+export default class BasketRedisProvider implements IBasket, IBasketConfigurable{
     
     private key:string;
 
-    constructor(Key:string){
-        this.key = Key;
+    public config(config: string): void {
+        this.key = config;
     }
 
     public add(product: IProduct): void {
